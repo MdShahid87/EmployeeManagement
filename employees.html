@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Manager - Employees</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+  </head>
+
+  <body>
+    <!--Topbar-->
+    <header class="topbar">
+      <div class="topbar-left">
+        <span class="logo">Employee Management</span>
+      </div>
+      <div class="topbar-right">
+        <!-- <span id="currentUserLabel" class="user-label"></span> -->
+        <button class="btn btn-ghost js-logout">Logout</button>
+      </div>
+    </header>
+    <!--Layout with Sidebar and Main Content-->
+    <div class="layout">
+      <nav class="sidebar">
+        <a href="dashboard.html" class="sidebar-link">Dashboard</a>
+        <a href="employees.html" class="sidebar-link active">Employees</a>
+        <a href="add-employee.html" class="sidebar-link">Add Employee</a>
+      </nav>
+      <!-- main content -->
+      <main class="content">
+        <header class="page-header">
+          <h1 class="page-title">Employees</h1>
+          <a href="add-employee.html" class="btn btn-primary">+ Add Employee</a>
+        </header>
+
+        <section class="panel">
+          <header class="panel-header panel-header--filters">
+            <div class="filters-row">
+              <div class="form-group">
+                <label for="searchInput">Search</label>
+                <input
+                  type="search"
+                  id="searchInput"
+                  placeholder="Search by name, email or phone"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="departmentFilter">Department</label>
+                <select id="departmentFilter">
+                  <option value="">All</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="roleFilter">Role</label>
+                <select id="roleFilter">
+                  <option value="">All</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="statusFilter">Status</label>
+                <select id="statusFilter">
+                  <option value="">All</option>
+                  <option value="Active">Active</option>
+                  <option value="Inactive">Inactive</option>
+                </select>
+              </div>
+            </div>
+          </header>
+          <!-- table wrapper-->
+          <div class="table-wrapper">
+            <table class="table table-clickable">
+              <thead>
+                <tr>
+                  <th data-sort="id">ID</th>
+                  <th data-sort="name">Name</th>
+                  <th data-sort="department">Department</th>
+                  <th data-sort="role">Role</th>
+                  <th data-sort="joiningDate">Joining Date</th>
+                  <th data-sort="status">Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="employeesTableBody">
+                <!-- Filled by JS -->
+              </tbody>
+            </table>
+          </div>
+          <!-- pagination footer -->
+          <footer class="panel-footer pagination-footer">
+            <div class="pagination-info">
+              <span id="paginationLabel"></span>
+            </div>
+            <div class="pagination-controls">
+              <button class="btn btn-ghost" id="prevPageBtn">&lt; Prev</button>
+              <span id="currentPageLabel"></span>
+              <button class="btn btn-ghost" id="nextPageBtn">Next &gt;</button>
+            </div>
+          </footer>
+        </section>
+      </main>
+    </div>
+    <!--Scripts File-->
+    <script src="js/storage.js" defer></script>
+    <script src="js/employee.js" defer></script>
+    <script src="js/auth.js" defer></script>
+    <script src="js/ui.js" defer></script>
+  </body>
+</html>

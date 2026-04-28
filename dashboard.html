@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Manager</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+  </head>
+  <body>
+    <!--Topbar-->
+    <header class="topbar">
+      <div class="topbar-left">
+        <span class="logo">Employee Manager</span>
+      </div>
+      <div class="topbar-right">
+        <span id="currentUserLabel" class="user-label">Admin</span>
+        <button class="btn btn-ghost js-logout">Logout</button>
+      </div>
+    </header>
+
+    <!--Layout-->
+    <div class="layout">
+      <nav class="sidebar">
+        <a href="dashboard.html" class="sidebar-link active">Dashboard</a>
+        <a href="employees.html" class="sidebar-link">Employees</a>
+        <a href="add-employee.html" class="sidebar-link">Add Employee</a>
+      </nav>
+      <!--main content-->
+      <main class="content">
+        <h1 class="page-title">Dashboard</h1>
+        <!--cards grid-->
+        <section class="cards-grid">
+          <article class="stat-card">
+            <h2>Total Employees</h2>
+            <p id="statTotalEmployees" class="stat-value">0</p>
+          </article>
+          <article class="stat-card">
+            <h2>Active Employees</h2>
+            <p id="statActiveEmployees" class="stat-value">0</p>
+          </article>
+          <article class="stat-card">
+            <h2>Departments</h2>
+            <p id="statDepartments" class="stat-value">0</p>
+          </article>
+          <article class="stat-card">
+            <h2>Recent Joins (30 days)</h2>
+            <p id="statRecentJoins" class="stat-value">0</p>
+          </article>
+        </section>
+        <!--Recent Employee Table-->
+        <section class="panel">
+          <header class="panel-header">
+            <h2>Recent Employees</h2>
+          </header>
+          <div class="table-wrapper">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Department</th>
+                  <th>Role</th>
+                  <th>Joined</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="recentEmployeesBody">
+                <!-- Filled by JS -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="js/storage.js" defer></script>
+    <script src="js/employee.js" defer></script>
+    <script src="js/auth.js" defer></script>
+    <script src="js/ui.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Manager - Login</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="auth-body">
+    <!-- Auth Container -->
+    <main class="auth-container">
+      <section class="auth-card">
+        <h1 class="app-title">Employee Management System</h1>
+        <p class="auth-subtitle">Sign in to continue</p>
+
+        <!-- login form -->
+        <form id="loginForm" class="form">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="you@company.com"
+              required
+            />
+            <p class="form-error" data-error-for="email"></p>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="••••••••"
+              required
+            />
+            <p class="form-error" data-error-for="password"></p>
+          </div>
+
+          <div class="form-group">
+            <label for="role">Login as</label>
+            <select id="role" name="role">
+              <option value="admin">Admin</option>
+              <option value="employee">Employee</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Login</button>
+          <p class="form-error" data-error-for="form"></p>
+        </form>
+        <!-- demo info -->
+        <div class="demo-info">
+          <p><strong>How to login</strong></p>
+          <p>Use <code>any email</code> and <code>any password</code>.</p>
+          <p>
+            Choose <code>Admin</code> or <code>Employee</code> from the
+            dropdown.
+          </p>
+        </div>
+      </section>
+    </main>
+    <script src="js/auth.js" defer></script>
+  </body>
+</html>
