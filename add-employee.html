@@ -1,124 +1,115 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Employee Manager - Add / Edit Employee</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/dashboard.css" />
-  </head>
-  <body>
-    <!--Topbar-->
-    <header class="topbar">
-      <div class="topbar-left">
-        <span class="logo">Employee Manager</span>
-      </div>
-      <div class="topbar-right">
-        <span id="currentUserLabel" class="user-label"></span>
-        <button class="btn btn-ghost js-logout">Logout</button>
-      </div>
-    </header>
-    <!--Layout with Sidebar and Main Content-->
-    <div class="layout">
-      <nav class="sidebar">
-        <a href="dashboard.html" class="sidebar-link">Dashboard</a>
-        <a href="employees.html" class="sidebar-link">Employees</a>
-        <a href="add-employee.html" class="sidebar-link active">Add Employee</a>
-      </nav>
-      <!--Sidebar Content-->
-      <main class="content">
-        <header class="page-header">
-          <h1 class="page-title" id="formTitle">Add Employee</h1>
-        </header>
-        <!--Employee Form -->
-        <section class="panel">
-          <form id="employeeForm" class="form form-grid">
-            <input type="hidden" id="employeeId" />
-            <div class="form-group">
-              <label for="fullName">Full Name</label>
-              <input type="text" id="fullName" name="fullName" required />
-              <p class="form-error" data-error-for="fullName"></p>
-            </div>
 
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required />
-              <p class="form-error" data-error-for="email"></p>
-            </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Employee Manager - Add / Edit Employee</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
 
-            <div class="form-group">
-              <label for="phone">Phone</label>
-              <input type="tel" id="phone" name="phone" required />
-              <p class="form-error" data-error-for="phone"></p>
-            </div>
-
-            <div class="form-group">
-              <label for="department">Department</label>
-              <input type="text" id="department" name="department" required />
-              <p class="form-error" data-error-for="department"></p>
-            </div>
-
-            <div class="form-group">
-              <label for="role">Role / Designation</label>
-              <input type="text" id="role" name="role" required />
-              <p class="form-error" data-error-for="role"></p>
-            </div>
-
-            <div class="form-group">
-              <label for="salary">Salary (per year)</label>
-              <input
-                type="number"
-                id="salary"
-                name="salary"
-                min="0"
-                step="1000"
-                required
-              />
-              <p class="form-error" data-error-for="salary"></p>
-            </div>
-
-            <div class="form-group">
-              <label for="joiningDate">Joining Date</label>
-              <input type="date" id="joiningDate" name="joiningDate" required />
-              <p class="form-error" data-error-for="joiningDate"></p>
-            </div>
-            <!--Form Group-->
-            <div class="form-group">
-              <label for="status">Status</label>
-              <select id="status" name="status">
-                <option value="Active">Active</option>
-                <option value="Inactive">Inactive</option>
-              </select>
-              <p class="form-error" data-error-for="status"></p>
-            </div>
-
-            <div class="form-group full-width">
-              <label for="profilePhoto">Profile Photo URL (optional)</label>
-              <input
-                type="url"
-                id="profilePhoto"
-                name="profilePhoto"
-                placeholder="https://..."
-              />
-              <p class="form-error" data-error-for="profilePhoto"></p>
-            </div>
-            <!--Form Actions-->
-            <div class="form-actions full-width">
-              <button type="submit" class="btn btn-primary">
-                Save Employee
-              </button>
-              <a href="employees.html" class="btn btn-ghost">Cancel</a>
-            </div>
-            <!--Form Error Message-->
-            <p class="form-error full-width" data-error-for="form"></p>
-          </form>
-        </section>
-      </main>
+<body>
+  <!--Topbar-->
+  <header class="topbar">
+    <div class="topbar-left">
+      <span class="logo">Employee Manager</span>
     </div>
-    <!--Scripts File-->
-    <script src="js/storage.js" defer></script>
-    <script src="js/employee.js" defer></script>
-    <script src="js/auth.js" defer></script>
-    <script src="js/ui.js" defer></script>
-  </body>
+    <div class="topbar-right">
+      <span id="currentUserLabel" class="user-label"></span>
+      <button class="btn btn-ghost js-logout">Logout</button>
+    </div>
+  </header>
+  <!--Layout with Sidebar and Main Content-->
+  <div class="layout">
+    <nav class="sidebar">
+      <a href="dashboard.html" class="sidebar-link">Dashboard</a>
+      <a href="employees.html" class="sidebar-link">Employees</a>
+      <a href="add-employee.html" class="sidebar-link active">Add Employee</a>
+    </nav>
+    <!--Sidebar Content-->
+    <main class="content">
+      <header class="page-header">
+        <h1 class="page-title" id="formTitle">Add Employee</h1>
+      </header>
+      <!--Employee Form -->
+      <section class="panel">
+        <form id="employeeForm" class="form form-grid">
+          <input type="hidden" id="employeeId" />
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" required />
+            <p class="form-error" data-error-for="fullName"></p>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+            <p class="form-error" data-error-for="email"></p>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" required />
+            <p class="form-error" data-error-for="phone"></p>
+          </div>
+
+          <div class="form-group">
+            <label for="department">Department</label>
+            <input type="text" id="department" name="department" required />
+            <p class="form-error" data-error-for="department"></p>
+          </div>
+
+          <div class="form-group">
+            <label for="role">Role / Designation</label>
+            <input type="text" id="role" name="role" required />
+            <p class="form-error" data-error-for="role"></p>
+          </div>
+
+          <div class="form-group">
+            <label for="salary">Salary (per year)</label>
+            <input type="number" id="salary" name="salary" min="0" step="1000" required />
+            <p class="form-error" data-error-for="salary"></p>
+          </div>
+
+          <div class="form-group">
+            <label for="joiningDate">Joining Date</label>
+            <input type="date" id="joiningDate" name="joiningDate" required />
+            <p class="form-error" data-error-for="joiningDate"></p>
+          </div>
+          <!--Form Group-->
+          <div class="form-group">
+            <label for="status">Status</label>
+            <select id="status" name="status">
+              <option value="Active">Active</option>
+              <option value="Inactive">Inactive</option>
+            </select>
+            <p class="form-error" data-error-for="status"></p>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="profilePhoto">Profile Photo URL (optional)</label>
+            <input type="url" id="profilePhoto" name="profilePhoto" placeholder="https://..." />
+            <p class="form-error" data-error-for="profilePhoto"></p>
+          </div>
+          <!--Form Actions-->
+          <div class="form-actions full-width">
+            <button type="submit" class="btn btn-primary">
+              Save Employee
+            </button>
+            <a href="employees.html" class="btn btn-ghost">Cancel</a>
+          </div>
+          <!--Form Error Message-->
+          <p class="form-error full-width" data-error-for="form"></p>
+        </form>
+      </section>
+    </main>
+  </div>
+  <!--Scripts File-->
+  <script src="js/storage.js" defer></script>
+  <script src="js/employee.js" defer></script>
+  <script src="js/auth.js" defer></script>
+  <script src="js/ui.js" defer></script>
+</body>
+
 </html>
