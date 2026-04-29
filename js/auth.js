@@ -16,7 +16,7 @@ const Auth = (() => {
   function setCurrentUser(user) {
     sessionStorage.setItem(SESSION_KEY, JSON.stringify(user));
   }
-
+  // Remove the current user information from sessionStorage
   function clearCurrentUser() {
     sessionStorage.removeItem(SESSION_KEY);
   }

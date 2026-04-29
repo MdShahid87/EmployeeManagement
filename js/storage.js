@@ -1,20 +1,21 @@
 const Storage = (() => {
   //Employee key
   const EMPLOYEES_KEY = "ems_employees";
-  //
+  // Initialize the employees data with mock data if not already present
   async function initEmployees() {
     const existing = localStorage.getItem(EMPLOYEES_KEY);
     if (existing) return JSON.parse(existing);
 
     try {
-      const res = await fetch("data/mock-data.json");
-      if (!res.ok) throw new Error("Failed to load mock data");
-      const data = await res.json();
+      const result = await fetch("data/mock-data.json");
+      if (!result.ok) throw new Error("Failed to load mock data");
+      const data = await result.json();
       const employees = data.employees || [];
+      // Save the employees to localStorage under the defined key
       localStorage.setItem(EMPLOYEES_KEY, JSON.stringify(employees));
       return employees;
-    } catch (e) {
-      console.error(e);
+    } catch (error) {
+      console.error(error);
       const fallback = [];
       localStorage.setItem(EMPLOYEES_KEY, JSON.stringify(fallback));
       return fallback;
