@@ -22,7 +22,6 @@ A modern, resonsive web application for managing employee records efficiently.
 - Edit Employee 
 - Delete Employee 
 - Search and Filter 
-- Pagination 
 - Responsive Design 
 
 # Uses
